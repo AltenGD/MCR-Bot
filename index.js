@@ -57,6 +57,7 @@ client.on('message', message => {
 
     let entrylevel = message.content.split('\n');
     // Suggestion / vote channel
+  // yoe
     if (message.channel.id === "451869794401255454" || message.channel.id === "466408542862180352") {
         if (!message.content.startsWith("<:blobcouncil:445538308483842048>")) {
             message.delete();
