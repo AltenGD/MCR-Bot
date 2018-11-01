@@ -89,7 +89,10 @@ client.on('message', message => {
             })
             return;
         } else {
-            return;
+            message.delete();
+            message.reply('Entries must be in this format:\n<Creator name> - <Level name>\n<ID>\n<Stars>*\n\nIf your on mobile, press the return key will make a new line. If your on PC, press on Shift + enter will make a new line').then(msg => {
+                msg.delete(10000)
+            })
         }
     }
 
