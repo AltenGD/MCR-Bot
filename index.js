@@ -72,7 +72,7 @@ client.on('message', message => {
     }
 
     // Entries channel
-    if (message.channel.id === "490545711797108776" || message.channel.id === "486773034490003457") {
+    if (message.channel.id === "507733140794507267" || message.channel.id === "486773034490003457") {
         if (message.author.bot) return;
 
         if (!isNaN(entrylevel[1])) {
