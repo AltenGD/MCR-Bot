@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
 
             embed.addField(`**${lvl.name} - ${lvl.author.name}** (${lvl.id})`, lvl.description || '(No description provided)')
             embed.setFooter(`${lvl.coins} coins, ${lvl.length}, ${lvl.downloads} downloads, ${lvl.likes} likes${lvl.rating ? `, ${lvl.rating}!` : ''}`)
-            embed.setThumbnail(`https://raw.githubusercontent.com/AltenGD/MCR-Bot/master/Faces/${lvl.rating || 'Nonfeatured'}/${(lvl.demon ? 'Demon/' : '') + encodeURIComponent(lvl.difficulty.replace(/\/|Hard /g, ''))}.png`)
+            embed.setThumbnail(`https://raw.githubusercontent.com/AltenGD/MCR-Bot/master/Faces/${lvl.rating || 'Nonfeatured'}/${(lvl.demon ? 'Demon/' : '') + encodeURIComponent(lvl.difficulty.replace('/', ''))}.png`)
         }
         message.channel.send(embed)
     }).catch(error => message.reply('Sorry that was in invalid level.'))

@@ -1,5 +1,5 @@
 module.exports.run = async(client, message, args) => {
-    if (!message.member.hasPermission('ADMINISTRATOR', false, true, false)) return;
+    if (!message.member.hasPermission('ADMINISTRATOR')) return;
 
     const deleteCount = parseInt(args[0], 10);
 

@@ -17,7 +17,7 @@ module.exports.run = async(client, message, args) => {
         let embed = new Discord.RichEmbed();
         
         // send help text
-        if (message.content === '!help') {
+        if (message.content === '?help') {
             let result = jsfiles.forEach((f, i) => {
                 let props = require(`./${f}`);
                 

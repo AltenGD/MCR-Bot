@@ -1,8 +1,9 @@
+const cfg = require('../config.json')
 const Discord = require("discord.js");
 const fs = require('fs');
 
 module.exports.run = async(client, message, args) => {
-    if (message.author.id != process.env.ownerID) return;
+    if (message.author.id != cfg.ownerID) return;
 
     const embed = new Discord.RichEmbed();
 
@@ -37,5 +38,5 @@ module.exports.help = {
     desc: "Evaluates a line of code",
     usage: "!eval <code>",
     hidden: true,
-    mod: true
+    mod: false
 }

@@ -1,3 +1,5 @@
+const cfg = require('../config.json')
+
 exports.run = (client, message, args) => {
     let start = Date.now()
 
@@ -11,7 +13,7 @@ exports.run = (client, message, args) => {
 exports.help = {
     name: "Ping",
     desc: "Shows latency of the bot",
-    usage: `${process.env.prefix}ping`,
+    usage: `${cfg.prefix}ping`,
     hidden: false,
     mod: false
 }
