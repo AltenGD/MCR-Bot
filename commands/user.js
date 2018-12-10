@@ -17,7 +17,7 @@ module.exports.run = async(client, message, args) => {
             console.log(user)
             message.channel.send('Creating image...')
             .then(msg => {
-                msg.delete(2000)
+                msg.delete(3000)
               })
 
             var img = ['./imgs/bg.png', './imgs/bg1.png', './imgs/overlay.png']
@@ -83,7 +83,7 @@ module.exports.run = async(client, message, args) => {
                 .catch(function (err) {
                     console.error(err);
                 });
-            }, 2800)
+            }, 3800)
 
             setTimeout (function() {
                 jimp.read('./imgs/img.png')
@@ -112,13 +112,13 @@ module.exports.run = async(client, message, args) => {
                 .catch(function (err) {
                     console.error(err);
                 });
-            }, 2800)
+            }, 3800)
 
             setTimeout (function() {
                 message.channel.send({
                     file: './imgs/img.png'
                 })
-            }, 3500)
+            }, 4500)
 
         })
     }).catch(() => message.reply(`Invalid user, please provide a valid user`))
