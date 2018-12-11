@@ -60,7 +60,7 @@ module.exports.run = async(client, message, args) => {
                     // ])
 
                     data[0].composite(data[1], 0, 0)
-                    data[0].blur(10)
+                    data[0].blur(20)
                     data[0].composite(data[2], 0, 0)
                     //same thing for this
                     // data[0].composite(data[3], 693, 10)
