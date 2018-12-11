@@ -50,6 +50,9 @@ module.exports.run = async(client, message, args) => {
                         { apply: 'mix', params: [`#${IC.colour[user.colors.primary]}`] }
                     ])
 
+                    data[0].resize(1280, 720);
+                    data[1].resize(1280, 720)
+
                     //shits broken dont uncomment
                     // data[3].color([ 
                     //     { apply: 'mix', params: [`#${IC.colour[user.colors.primary]}`] }
@@ -66,9 +69,9 @@ module.exports.run = async(client, message, args) => {
                     // data[0].composite(data[3], 693, 10)
                     // data[0].composite(data[4], 693, 10)
                     
-                    data[0].write(`imgs/img.png`)
+                    data[0].write(`imgs/img.png`).quality(50);
                 })
-            }, 2000)
+            }, 1000)
 
             setTimeout (function() {
                 jimp.read('./imgs/img.png')
@@ -83,7 +86,7 @@ module.exports.run = async(client, message, args) => {
                 .catch(function (err) {
                     console.error(err);
                 });
-            }, 3800)
+            }, 2800)
 
             setTimeout (function() {
                 jimp.read('./imgs/img.png')
@@ -106,19 +109,20 @@ module.exports.run = async(client, message, args) => {
                     return jimp.loadFont(jimp.FONT_SANS_16_WHITE);
                 })
                 .then(font => {
-                    loadedImage.print(font, 10, 450, `keep in mind that this is still under development and that more will be added in the near future`)
+                    loadedImage.print(font, 10, 550, `keep in mind that this is still under development and that more will be added in the near future`)
                     .write('imgs/img.png');
                 })
                 .catch(function (err) {
                     console.error(err);
                 });
-            }, 3800)
+            }, 2800)
 
-            setTimeout (function() {
+            setTimeout (() => {
                 message.channel.send({
                     file: './imgs/img.png'
                 })
-            }, 4500)
+                console.log("Sent message");
+            }, 3500)
 
         })
     }).catch(() => message.reply(`Invalid user, please provide a valid user`))
