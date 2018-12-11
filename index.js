@@ -23,7 +23,7 @@ fs.readdir('./commands/', (err, files) => {
     client.commands.set(command.help.name, command);
   }); 
 });
-
+console.log("yes");
 client.on('ready', () => {
     console.log(`Ready! logged in as ${client.user.tag}`);
     client.user.setActivity(`${client.guilds.get('440491741783523348').memberCount} People building`, {
