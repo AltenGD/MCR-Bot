@@ -50,9 +50,6 @@ module.exports.run = async(client, message, args) => {
                         { apply: 'mix', params: [`#${IC.colour[user.colors.primary]}`] }
                     ])
 
-                    data[0].resize(1280, 720);
-                    data[1].resize(1280, 720)
-
                     //shits broken dont uncomment
                     // data[3].color([ 
                     //     { apply: 'mix', params: [`#${IC.colour[user.colors.primary]}`] }
@@ -63,13 +60,13 @@ module.exports.run = async(client, message, args) => {
                     // ])
 
                     data[0].composite(data[1], 0, 0)
-                    data[0].blur(20)
+                    //data[0].blur(20)
                     data[0].composite(data[2], 0, 0)
                     //same thing for this
                     // data[0].composite(data[3], 693, 10)
                     // data[0].composite(data[4], 693, 10)
                     
-                    data[0].write(`imgs/img.png`).quality(50);
+                    data[0].write(`imgs/img.png`);
                 })
             }, 1000)
 
@@ -77,7 +74,7 @@ module.exports.run = async(client, message, args) => {
                 jimp.read('./imgs/img.png')
                 .then(image => {
                     loadedImage = image;
-                    return jimp.loadFont(jimp.FONT_SANS_32_WHITE);
+                    return jimp.loadFont('./commands/font/font500.fnt');
                 })
                 .then(font => {
                     loadedImage.print(font, 10, 5, `${user.username}`)
@@ -92,7 +89,7 @@ module.exports.run = async(client, message, args) => {
                 jimp.read('./imgs/img.png')
                 .then(image => {
                     loadedImage = image;
-                    return jimp.loadFont(jimp.FONT_SANS_32_WHITE);
+                    return jimp.loadFont('./commands/font/font700.fnt');
                 })
                 .then(font => {
                     loadedImage.print(font, 10, 211, `${user.demons} Demons, ${user.coins} Official coins, ${user.userCoins} User coins`)
@@ -106,10 +103,10 @@ module.exports.run = async(client, message, args) => {
                 jimp.read('./imgs/img.png')
                 .then(image => {
                     loadedImage = image;
-                    return jimp.loadFont(jimp.FONT_SANS_16_WHITE);
+                    return jimp.loadFont('./commands/font/font300.fnt');
                 })
                 .then(font => {
-                    loadedImage.print(font, 10, 550, `keep in mind that this is still under development and that more will be added in the near future`)
+                    loadedImage.print(font, 10, 450, `keep in mind that this is still under development and that more will be added in the near future`)
                     .write('imgs/img.png');
                 })
                 .catch(function (err) {
@@ -131,7 +128,7 @@ module.exports.run = async(client, message, args) => {
 module.exports.help = {
     name: "User",
     desc: "Gets information about a user",
-    usage: "!user <ID or Name>",
+    usage: `!user <ID or Name>`,
     hidden: false,
     mod: false
 }

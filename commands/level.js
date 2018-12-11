@@ -7,6 +7,8 @@ module.exports.run = async(client, message, args) => {
     args = args.join(' ')
 
     GD.levels(args).then(levels => {
+
+        console.log(levels);
         if (isNaN(args)) {
             embed.setTitle(`<:info:453605020529721356> Found ${levels.length} different levels`)
             for (let lvl of levels) embed.addField(`${j++}. **${lvl.name} - ${lvl.author.name}** (${lvl.id})`, lvl.description || '(No description provided)')
